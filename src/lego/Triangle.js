@@ -1,25 +1,21 @@
-export const Triangle = ({color="black", size=100, place=[0, 0]}) => {
+import { Shape } from "./Shape"
 
-    const css = {
-        position: "absolute",
+export const Triangle = ({color, size, ...props}) => {
 
+    const specificCss = {
         width: 0,    
         height: 0,
-        top: `${place[0]}px`,
-        left: `${place[1]}px`,  
-        
         border: `${color} solid ${size / 2}px`,
         borderTopColor: "transparent",
         borderLeftColor: "transparent",
         borderRightColor: "transparent",
         borderBottomWidth: `${size}px`,
-        borderTopWidth: 0
-        
+        borderTopWidth: 0 
     }
     
     return (
-        <div style={css}>
-        
-        </div>
+        <Shape {...props}>
+             <div style={specificCss}></div>
+        </Shape>
     )
 }

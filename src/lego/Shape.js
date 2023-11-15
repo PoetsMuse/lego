@@ -1,13 +1,17 @@
-export const Shape = ({color="black", size=100, place=[0, 0]}) => {
+export const Shape = ({
+    place=[0, 0],
+    children
+}) => {
 
-    const css = {
+    const commonCss = {
         position: "absolute",
-
         top: `${place[0]}px`,
         left: `${place[1]}px`    
     }
     
     return (
-        <div style={css}></div>
+        <div style={commonCss}>
+           {children}
+        </div>
     )
 }

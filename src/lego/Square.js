@@ -1,18 +1,16 @@
-export const Square = ({color="black", size=100, place=[0, 0]}) => {
+import { Shape } from "./Shape"
 
-    const css = {
-        position: "absolute",
+export const Square = ({color, size, ...props}) => {
 
+    const specificCss = {
         backgroundColor: color,
         width: `${size}px`,    
         height: `${size}px`,
-        top: `${place[0]}px`,
-        left: `${place[1]}px`    
     }
     
     return (
-        <div style={css}>
-        
-        </div>
-    )
+        <Shape {...props}>
+             <div style={specificCss}></div>
+        </Shape>
+    )       
 }
